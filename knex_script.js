@@ -1,17 +1,5 @@
-const pg = require("pg");
-const settings = require("./settings"); // settings.json
 
-
-var knex = require('knex')({
-              client: 'pg',
-              connection: {
-                host : settings.hostname,
-                user : settings.user,
-                password : settings.password,
-                database : settings.database
-              }
-            });
-
+const knex = require("./knex");
 
 var lname = process.argv[2];
 
@@ -22,4 +10,3 @@ knex.select('*').from('famous_people')
       console.log(rows);
       knex.destroy();
 });
-
