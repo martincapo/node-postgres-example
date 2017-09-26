@@ -5,7 +5,9 @@ exports.up = function(knex, Promise) {
       table.increments('id').primary().unsigned()
       table.string('description');
       table.date('date_achieved');
-    })
+      table.integer('famous_person_id').unsigned();
+      table.foreign('famous_person_id').references('famous_people.id');
+     })
   ])
 };
 
