@@ -1,5 +1,9 @@
 const knex = require("./knex");
 
+const migrate = require("./knexfile");
+
+
+
 var fName = process.argv[2];
 var lName = process.argv[3];
 var dob = process.argv[4];
